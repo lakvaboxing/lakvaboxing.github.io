@@ -1,2 +1,5 @@
 # macOS system files
 .DS_Store
+
+# Package managers
+node_modules/
