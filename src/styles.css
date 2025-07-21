@@ -1,7 +1,14 @@
 @import "tailwindcss";
 
-body {
+html {
     font-family: "Roboto", sans-serif;
+    background:
+        linear-gradient(144deg, rgb(0, 0, 0, .95) 30%, rgb(4, 4, 4, .99) 84%, rgb(8, 8, 8, .84)),
+        url('./img/background.png'),
+        #000;
+    min-height: 100vh;
+    width: 100%;
+    color: #fff;
 }
 
 .font-title {
