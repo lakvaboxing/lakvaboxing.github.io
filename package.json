@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "build:css": "npx @tailwindcss/cli -i ./src/styles.css -o ./docs/styles.css --minify",
-    "dev": "npx @tailwindcss/cli -i ./src/styles.css -o ./docs/styles.css --watch"
+    "build:css": "npx @tailwindcss/cli -i ./src/styles.css -o ./public/styles.css --minify",
+    "dev": "npx @tailwindcss/cli -i ./src/styles.css -o ./public/styles.css --watch"
   },
   "devDependencies": {
     "@tailwindcss/cli": "^4.1.11",
