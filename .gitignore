@@ -3,6 +3,3 @@
 
 # Package managers
 node_modules/
-
-# Website files
-public/styles.css
