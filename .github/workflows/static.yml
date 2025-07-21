@@ -28,22 +28,32 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup Node.js 18.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
+      - name: Clean and install dependencies (include optional)
+        run: |
+          rm -rf node_modules package-lock.json
+          npm install
+
       - name: Build project
         run: |
-          npm install
-          npm run build:css
+          npx @tailwindcss/cli -i ./src/styles.css -o ./public/styles.css --minify
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload only the public directory
           path: './public'
 
       - name: Deploy to GitHub Pages
